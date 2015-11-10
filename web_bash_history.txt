@@ -1,0 +1,534 @@
+cbsanchez:livro cristianosanchez$ vagrant ssh db
+    
+    Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+
+Documentation:  https://help.ubuntu.com/
+
+    Welcome to your Vagrant-built virtual machine.
+    Last login: Fri Sep 14 06:22:31 2012 from 10.0.2.2
+
+vagrant@precise32:~$ sudo apt-get update
+
+    Ign http://security.ubuntu.com precise-security InRelease
+    Ign http://us.archive.ubuntu.com precise InRelease
+    Ign http://us.archive.ubuntu.com precise-updates InRelease
+    Ign http://us.archive.ubuntu.com precise-backports InRelease
+    Get:1 http://security.ubuntu.com precise-security Release.gpg [198 B]
+    Hit http://us.archive.ubuntu.com precise Release.gpg
+    Get:2 http://security.ubuntu.com precise-security Release [49.6 kB]
+    Get:3 http://us.archive.ubuntu.com precise-updates Release.gpg [198 B]
+    Get:4 http://us.archive.ubuntu.com precise-backports Release.gpg [198 B]
+    Hit http://us.archive.ubuntu.com precise Release                
+    Get:5 http://us.archive.ubuntu.com precise-updates Release [49.6 kB]   
+    Get:6 http://security.ubuntu.com precise-security/main Sources [101 kB]
+    Get:7 http://us.archive.ubuntu.com precise-backports Release [49.6 kB]
+    Hit http://us.archive.ubuntu.com precise/main Sources                                 
+    Hit http://us.archive.ubuntu.com precise/restricted Sources
+    Hit http://us.archive.ubuntu.com precise/universe Sources
+    Hit http://us.archive.ubuntu.com precise/multiverse Sources
+    Hit http://us.archive.ubuntu.com precise/main i386 Packages
+    Hit http://us.archive.ubuntu.com precise/restricted i386 Packages
+    Hit http://us.archive.ubuntu.com precise/universe i386 Packages
+    Hit http://us.archive.ubuntu.com precise/multiverse i386 Packages
+    Hit http://us.archive.ubuntu.com precise/main TranslationIndex
+    Get:8 http://security.ubuntu.com precise-security/restricted Sources [2,494 B]
+    Get:9 http://security.ubuntu.com precise-security/universe Sources [30.9 kB]
+    Get:10 http://security.ubuntu.com precise-security/multiverse Sources [1,789 B]
+    Get:11 http://security.ubuntu.com precise-security/main i386 Packages [401 kB]
+    Hit http://us.archive.ubuntu.com precise/multiverse TranslationIndex            
+    Hit http://us.archive.ubuntu.com precise/restricted TranslationIndex
+    Hit http://us.archive.ubuntu.com precise/universe TranslationIndex
+    Get:12 http://us.archive.ubuntu.com precise-updates/main Sources [453 kB]
+    Get:13 http://security.ubuntu.com precise-security/restricted i386 Packages [4,620 B]
+    Get:14 http://security.ubuntu.com precise-security/universe i386 Packages [96.5 kB]    
+    Get:15 http://us.archive.ubuntu.com precise-updates/restricted Sources [8,028 B]         
+    Get:16 http://us.archive.ubuntu.com precise-updates/universe Sources [105 kB]               
+    Get:17 http://security.ubuntu.com precise-security/multiverse i386 Packages [2,646 B]       
+    Get:18 http://security.ubuntu.com precise-security/main TranslationIndex [74 B]             
+    Get:19 http://security.ubuntu.com precise-security/multiverse TranslationIndex [72 B]      
+    Get:20 http://security.ubuntu.com precise-security/restricted TranslationIndex [72 B]      
+    Get:21 http://security.ubuntu.com precise-security/universe TranslationIndex [73 B]        
+    Get:22 http://us.archive.ubuntu.com precise-updates/multiverse Sources [8,900 B] 
+    Get:23 http://us.archive.ubuntu.com precise-updates/main i386 Packages [784 kB]
+    Get:24 http://security.ubuntu.com precise-security/main Translation-en [175 kB]   
+    Get:25 http://security.ubuntu.com precise-security/multiverse Translation-en [1,299 B]            
+    Get:26 http://security.ubuntu.com precise-security/restricted Translation-en [1,253 B]              
+    Get:27 http://security.ubuntu.com precise-security/universe Translation-en [56.7 kB]                
+    Get:28 http://us.archive.ubuntu.com precise-updates/restricted i386 Packages [12.2 kB]                   
+    Get:29 http://us.archive.ubuntu.com precise-updates/universe i386 Packages [243 kB]
+    Get:30 http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages [15.5 kB]
+    Get:31 http://us.archive.ubuntu.com precise-updates/main TranslationIndex [3,564 B]
+    Get:32 http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex [2,605 B]
+    Get:33 http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex [2,461 B]
+    Get:34 http://us.archive.ubuntu.com precise-updates/universe TranslationIndex [2,850 B]
+    Get:35 http://us.archive.ubuntu.com precise-backports/main Sources [4,850 B]
+    Get:36 http://us.archive.ubuntu.com precise-backports/restricted Sources [14 B]
+    Get:37 http://us.archive.ubuntu.com precise-backports/universe Sources [36.4 kB]
+    Get:38 http://us.archive.ubuntu.com precise-backports/multiverse Sources [5,311 B]
+    Get:39 http://us.archive.ubuntu.com precise-backports/main i386 Packages [6,182 B]
+    Get:40 http://us.archive.ubuntu.com precise-backports/restricted i386 Packages [14 B]
+    Get:41 http://us.archive.ubuntu.com precise-backports/universe i386 Packages [38.0 kB]
+    Get:42 http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages [5,178 B]
+    Get:43 http://us.archive.ubuntu.com precise-backports/main TranslationIndex [72 B]
+    Get:44 http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex [72 B]
+    Get:45 http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex [70 B]
+    Get:46 http://us.archive.ubuntu.com precise-backports/universe TranslationIndex [73 B]
+    Hit http://us.archive.ubuntu.com precise/main Translation-en
+    Hit http://us.archive.ubuntu.com precise/multiverse Translation-en
+    Hit http://us.archive.ubuntu.com precise/restricted Translation-en
+    Hit http://us.archive.ubuntu.com precise/universe Translation-en
+    Get:47 http://us.archive.ubuntu.com precise-updates/main Translation-en [340 kB]
+    Get:48 http://us.archive.ubuntu.com precise-updates/multiverse Translation-en [9,010 B]
+    Get:49 http://us.archive.ubuntu.com precise-updates/restricted Translation-en [2,988 B]
+    Get:50 http://us.archive.ubuntu.com precise-updates/universe Translation-en [138 kB]
+    Get:51 http://us.archive.ubuntu.com precise-backports/main Translation-en [5,562 B]
+    Get:52 http://us.archive.ubuntu.com precise-backports/multiverse Translation-en [4,610 B]
+    Hit http://us.archive.ubuntu.com precise-backports/restricted Translation-en
+    Get:53 http://us.archive.ubuntu.com precise-backports/universe Translation-en [28.0 kB]
+    Fetched 3,291 kB in 5s (572 kB/s)                                         
+    Reading package lists... Done
+
+vagrant@precise32:~$ sudo apt-get install tomcat7 mysql-client
+
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    The following extra packages will be installed:
+      authbind ca-certificates-java default-jre-headless icedtea-6-jre-cacao icedtea-6-jre-jamvm java-common libavahi-client3 libavahi-common-data libavahi-common3
+      libcommons-collections3-java libcommons-dbcp-java libcommons-pool-java libcups2 libdbd-mysql-perl libdbi-perl libecj-java libjpeg-turbo8 libjpeg8 liblcms2-2
+      libmysqlclient18 libnet-daemon-perl libnspr4 libnss3 libnss3-1d libpcsclite1 libplrpc-perl libservlet3.0-java libterm-readkey-perl libtomcat7-java
+      mysql-client-5.5 mysql-client-core-5.5 mysql-common openjdk-6-jre-headless openjdk-6-jre-lib tomcat7-common tzdata tzdata-java
+    Suggested packages:
+      default-jre equivs libcommons-collections3-java-doc libgeronimo-jta-1.0.1b-spec-java cups-common ecj ant libecj-java-gcj liblcms2-utils pcscd libnss-mdns
+      sun-java6-fonts ttf-dejavu-extra fonts-ipafont-gothic fonts-ipafont-mincho ttf-wqy-microhei ttf-wqy-zenhei ttf-indic-fonts-core ttf-telugu-fonts
+      ttf-oriya-fonts ttf-kannada-fonts ttf-bengali-fonts tomcat7-docs tomcat7-admin tomcat7-examples tomcat7-user libtcnative-1
+    The following NEW packages will be installed:
+      authbind ca-certificates-java default-jre-headless icedtea-6-jre-cacao icedtea-6-jre-jamvm java-common libavahi-client3 libavahi-common-data libavahi-common3
+      libcommons-collections3-java libcommons-dbcp-java libcommons-pool-java libcups2 libdbd-mysql-perl libdbi-perl libecj-java libjpeg-turbo8 libjpeg8 liblcms2-2
+      libmysqlclient18 libnet-daemon-perl libnspr4 libnss3 libnss3-1d libpcsclite1 libplrpc-perl libservlet3.0-java libterm-readkey-perl libtomcat7-java
+      mysql-client mysql-client-5.5 mysql-client-core-5.5 mysql-common openjdk-6-jre-headless openjdk-6-jre-lib tomcat7 tomcat7-common tzdata-java
+    The following packages will be upgraded:
+      tzdata
+    1 upgraded, 38 newly installed, 0 to remove and 158 not upgraded.
+    Need to get 63.1 MB of archives.
+    After this operation, 119 MB of additional disk space will be used.
+    Do you want to continue [Y/n]? Y
+    Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libavahi-common-data i386 0.6.30-5ubuntu2.1 [21.3 kB]
+    Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libavahi-common3 i386 0.6.30-5ubuntu2.1 [26.1 kB]
+    Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libavahi-client3 i386 0.6.30-5ubuntu2.1 [30.1 kB]
+    Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libcups2 i386 1.5.3-0ubuntu8 [172 kB]
+    Get:5 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libjpeg-turbo8 i386 1.1.90+svn733-0ubuntu4.3 [118 kB]
+    Get:6 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main liblcms2-2 i386 2.2+git20110628-2ubuntu3.1 [145 kB]
+    Get:7 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-common all 5.5.35-0ubuntu0.12.04.2 [13.0 kB]
+    Get:8 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libmysqlclient18 i386 5.5.35-0ubuntu0.12.04.2 [924 kB]
+    Get:9 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libnspr4 i386 4.9.5-0ubuntu0.12.04.2 [144 kB]
+    Get:10 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libnss3 i386 3.15.4-0ubuntu0.12.04.1 [1,295 kB]
+    Get:11 http://us.archive.ubuntu.com/ubuntu/ precise/main libpcsclite1 i386 1.7.4-2ubuntu2 [24.0 kB]
+    Get:12 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main openjdk-6-jre-lib all 6b30-1.13.1-1ubuntu2~0.12.04.1 [6,213 kB]
+    Get:13 http://us.archive.ubuntu.com/ubuntu/ precise/main java-common all 0.43ubuntu2 [61.7 kB]                                                                  
+    Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/main default-jre-headless i386 1:1.6-43ubuntu2 [3,328 B]                                                    
+    Get:15 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libnss3-1d i386 3.15.4-0ubuntu0.12.04.1 [13.4 kB]                                              
+    Get:16 http://us.archive.ubuntu.com/ubuntu/ precise/main ca-certificates-java all 20110912ubuntu6 [8,186 B]                                                     
+    Get:17 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main tzdata all 2014a-0ubuntu0.12.04 [448 kB]                                                       
+    Get:18 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main tzdata-java all 2014a-0ubuntu0.12.04 [126 kB]                                                  
+    Get:19 http://us.archive.ubuntu.com/ubuntu/ precise/main libjpeg8 i386 8c-2ubuntu7 [2,112 B]                                                                    
+    Get:20 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main openjdk-6-jre-headless i386 6b30-1.13.1-1ubuntu2~0.12.04.1 [35.0 MB]                           
+    Get:21 http://us.archive.ubuntu.com/ubuntu/ precise/main libcommons-collections3-java all 3.2.1-5 [603 kB]                                                      
+    Get:22 http://us.archive.ubuntu.com/ubuntu/ precise/main libcommons-pool-java all 1.5.6-1 [94.0 kB]                                                             
+    Get:23 http://us.archive.ubuntu.com/ubuntu/ precise/main libcommons-dbcp-java all 1.4-1ubuntu1 [152 kB]                                                         
+    Get:24 http://us.archive.ubuntu.com/ubuntu/ precise/main libnet-daemon-perl all 0.48-1 [43.1 kB]                                                                
+    Get:25 http://us.archive.ubuntu.com/ubuntu/ precise/main libplrpc-perl all 0.2020-2 [36.0 kB]                                                                   
+    Get:26 http://us.archive.ubuntu.com/ubuntu/ precise/main libdbi-perl i386 1.616-1build2 [849 kB]                                                                
+    Get:27 http://us.archive.ubuntu.com/ubuntu/ precise/main libdbd-mysql-perl i386 4.020-1build2 [104 kB]                                                          
+    Get:28 http://us.archive.ubuntu.com/ubuntu/ precise/main libecj-java all 3.5.1-3 [1,231 kB]                                                                     
+    Get:29 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe libservlet3.0-java all 7.0.26-1ubuntu1.2 [292 kB]                                          
+    Get:30 http://us.archive.ubuntu.com/ubuntu/ precise/main libterm-readkey-perl i386 2.30-4build3 [28.4 kB]                                                       
+    Get:31 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe libtomcat7-java all 7.0.26-1ubuntu1.2 [3,418 kB]                                           
+    Get:32 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-client-core-5.5 i386 5.5.35-0ubuntu0.12.04.2 [1,869 kB]                                  
+    Get:33 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-client-5.5 i386 5.5.35-0ubuntu0.12.04.2 [8,090 kB]                                       
+    Get:34 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-client all 5.5.35-0ubuntu0.12.04.2 [11.1 kB]                                             
+    Get:35 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe tomcat7-common all 7.0.26-1ubuntu1.2 [49.1 kB]                                             
+    Get:36 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe tomcat7 all 7.0.26-1ubuntu1.2 [37.3 kB]                                                    
+    Get:37 http://us.archive.ubuntu.com/ubuntu/ precise/main authbind i386 1.2.0build3 [16.9 kB]                                                                    
+    Get:38 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main icedtea-6-jre-cacao i386 6b30-1.13.1-1ubuntu2~0.12.04.1 [769 kB]                               
+    Get:39 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main icedtea-6-jre-jamvm i386 6b30-1.13.1-1ubuntu2~0.12.04.1 [549 kB]                               
+    Fetched 63.1 MB in 49s (1,263 kB/s)                                                                                                                             
+    Extracting templates from packages: 100%
+    Preconfiguring packages ...
+    Selecting previously unselected package libavahi-common-data.
+    (Reading database ... 29361 files and directories currently installed.)
+    Unpacking libavahi-common-data (from .../libavahi-common-data_0.6.30-5ubuntu2.1_i386.deb) ...
+    Selecting previously unselected package libavahi-common3.
+    Unpacking libavahi-common3 (from .../libavahi-common3_0.6.30-5ubuntu2.1_i386.deb) ...
+    Selecting previously unselected package libavahi-client3.
+    Unpacking libavahi-client3 (from .../libavahi-client3_0.6.30-5ubuntu2.1_i386.deb) ...
+    Selecting previously unselected package libcups2.
+    Unpacking libcups2 (from .../libcups2_1.5.3-0ubuntu8_i386.deb) ...
+    Selecting previously unselected package libjpeg-turbo8.
+    Unpacking libjpeg-turbo8 (from .../libjpeg-turbo8_1.1.90+svn733-0ubuntu4.3_i386.deb) ...
+    Selecting previously unselected package liblcms2-2.
+    Unpacking liblcms2-2 (from .../liblcms2-2_2.2+git20110628-2ubuntu3.1_i386.deb) ...
+    Selecting previously unselected package mysql-common.
+    Unpacking mysql-common (from .../mysql-common_5.5.35-0ubuntu0.12.04.2_all.deb) ...
+    Selecting previously unselected package libmysqlclient18.
+    Unpacking libmysqlclient18 (from .../libmysqlclient18_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
+    Selecting previously unselected package libnspr4.
+    Unpacking libnspr4 (from .../libnspr4_4.9.5-0ubuntu0.12.04.2_i386.deb) ...
+    Selecting previously unselected package libnss3.
+    Unpacking libnss3 (from .../libnss3_3.15.4-0ubuntu0.12.04.1_i386.deb) ...
+    Selecting previously unselected package libpcsclite1.
+    Unpacking libpcsclite1 (from .../libpcsclite1_1.7.4-2ubuntu2_i386.deb) ...
+    Selecting previously unselected package openjdk-6-jre-lib.
+    Unpacking openjdk-6-jre-lib (from .../openjdk-6-jre-lib_6b30-1.13.1-1ubuntu2~0.12.04.1_all.deb) ...
+    Selecting previously unselected package java-common.
+    Unpacking java-common (from .../java-common_0.43ubuntu2_all.deb) ...
+    Selecting previously unselected package default-jre-headless.
+    Unpacking default-jre-headless (from .../default-jre-headless_1%3a1.6-43ubuntu2_i386.deb) ...
+    Selecting previously unselected package libnss3-1d.
+    Unpacking libnss3-1d (from .../libnss3-1d_3.15.4-0ubuntu0.12.04.1_i386.deb) ...
+    Selecting previously unselected package ca-certificates-java.
+    Unpacking ca-certificates-java (from .../ca-certificates-java_20110912ubuntu6_all.deb) ...
+    Preparing to replace tzdata 2012b-1 (using .../tzdata_2014a-0ubuntu0.12.04_all.deb) ...
+    Unpacking replacement tzdata ...
+    Processing triggers for man-db ...
+    Setting up tzdata (2014a-0ubuntu0.12.04) ...
+    
+    Current default time zone: 'Etc/UTC'
+    Local time is now:      Wed Apr  2 14:38:34 UTC 2014.
+    Universal Time is now:  Wed Apr  2 14:38:34 UTC 2014.
+    Run 'dpkg-reconfigure tzdata' if you wish to change it.
+    
+    Selecting previously unselected package tzdata-java.
+    (Reading database ... 29543 files and directories currently installed.)
+    Unpacking tzdata-java (from .../tzdata-java_2014a-0ubuntu0.12.04_all.deb) ...
+    Selecting previously unselected package libjpeg8.
+    Unpacking libjpeg8 (from .../libjpeg8_8c-2ubuntu7_i386.deb) ...
+    Selecting previously unselected package openjdk-6-jre-headless.
+    Unpacking openjdk-6-jre-headless (from .../openjdk-6-jre-headless_6b30-1.13.1-1ubuntu2~0.12.04.1_i386.deb) ...
+    Selecting previously unselected package libcommons-collections3-java.
+    Unpacking libcommons-collections3-java (from .../libcommons-collections3-java_3.2.1-5_all.deb) ...
+    Selecting previously unselected package libcommons-pool-java.
+    Unpacking libcommons-pool-java (from .../libcommons-pool-java_1.5.6-1_all.deb) ...
+    Selecting previously unselected package libcommons-dbcp-java.
+    Unpacking libcommons-dbcp-java (from .../libcommons-dbcp-java_1.4-1ubuntu1_all.deb) ...
+    Selecting previously unselected package libnet-daemon-perl.
+    Unpacking libnet-daemon-perl (from .../libnet-daemon-perl_0.48-1_all.deb) ...
+    Selecting previously unselected package libplrpc-perl.
+    Unpacking libplrpc-perl (from .../libplrpc-perl_0.2020-2_all.deb) ...
+    Selecting previously unselected package libdbi-perl.
+    Unpacking libdbi-perl (from .../libdbi-perl_1.616-1build2_i386.deb) ...
+    Selecting previously unselected package libdbd-mysql-perl.
+    Unpacking libdbd-mysql-perl (from .../libdbd-mysql-perl_4.020-1build2_i386.deb) ...
+    Selecting previously unselected package libecj-java.
+    Unpacking libecj-java (from .../libecj-java_3.5.1-3_all.deb) ...
+    Selecting previously unselected package libservlet3.0-java.
+    Unpacking libservlet3.0-java (from .../libservlet3.0-java_7.0.26-1ubuntu1.2_all.deb) ...
+    Selecting previously unselected package libterm-readkey-perl.
+    Unpacking libterm-readkey-perl (from .../libterm-readkey-perl_2.30-4build3_i386.deb) ...
+    Selecting previously unselected package libtomcat7-java.
+    Unpacking libtomcat7-java (from .../libtomcat7-java_7.0.26-1ubuntu1.2_all.deb) ...
+    Selecting previously unselected package mysql-client-core-5.5.
+    Unpacking mysql-client-core-5.5 (from .../mysql-client-core-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
+    Selecting previously unselected package mysql-client-5.5.
+    Unpacking mysql-client-5.5 (from .../mysql-client-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
+    Selecting previously unselected package mysql-client.
+    Unpacking mysql-client (from .../mysql-client_5.5.35-0ubuntu0.12.04.2_all.deb) ...
+    Selecting previously unselected package tomcat7-common.
+    Unpacking tomcat7-common (from .../tomcat7-common_7.0.26-1ubuntu1.2_all.deb) ...
+    Selecting previously unselected package tomcat7.
+    Unpacking tomcat7 (from .../tomcat7_7.0.26-1ubuntu1.2_all.deb) ...
+    Selecting previously unselected package authbind.
+    Unpacking authbind (from .../authbind_1.2.0build3_i386.deb) ...
+    Selecting previously unselected package icedtea-6-jre-cacao.
+    Unpacking icedtea-6-jre-cacao (from .../icedtea-6-jre-cacao_6b30-1.13.1-1ubuntu2~0.12.04.1_i386.deb) ...
+    Selecting previously unselected package icedtea-6-jre-jamvm.
+    Unpacking icedtea-6-jre-jamvm (from .../icedtea-6-jre-jamvm_6b30-1.13.1-1ubuntu2~0.12.04.1_i386.deb) ...
+    Processing triggers for man-db ...
+    Processing triggers for ureadahead ...
+    ureadahead will be reprofiled on next reboot
+    Setting up libavahi-common-data (0.6.30-5ubuntu2.1) ...
+    Setting up libavahi-common3 (0.6.30-5ubuntu2.1) ...
+    Setting up libavahi-client3 (0.6.30-5ubuntu2.1) ...
+    Setting up libcups2 (1.5.3-0ubuntu8) ...
+    Setting up libjpeg-turbo8 (1.1.90+svn733-0ubuntu4.3) ...
+    Setting up liblcms2-2 (2.2+git20110628-2ubuntu3.1) ...
+    Setting up mysql-common (5.5.35-0ubuntu0.12.04.2) ...
+    Setting up libmysqlclient18 (5.5.35-0ubuntu0.12.04.2) ...
+    Setting up libnspr4 (4.9.5-0ubuntu0.12.04.2) ...
+    Setting up libnss3 (3.15.4-0ubuntu0.12.04.1) ...
+    Setting up libpcsclite1 (1.7.4-2ubuntu2) ...
+    Setting up java-common (0.43ubuntu2) ...
+    Setting up tzdata-java (2014a-0ubuntu0.12.04) ...
+    Setting up libjpeg8 (8c-2ubuntu7) ...
+    Setting up libnss3-1d (3.15.4-0ubuntu0.12.04.1) ...
+    Setting up libcommons-collections3-java (3.2.1-5) ...
+    Setting up libcommons-pool-java (1.5.6-1) ...
+    Setting up libnet-daemon-perl (0.48-1) ...
+    Setting up libplrpc-perl (0.2020-2) ...
+    Setting up libdbi-perl (1.616-1build2) ...
+    Setting up libdbd-mysql-perl (4.020-1build2) ...
+    Setting up libecj-java (3.5.1-3) ...
+    Setting up libservlet3.0-java (7.0.26-1ubuntu1.2) ...
+    Setting up libterm-readkey-perl (2.30-4build3) ...
+    Setting up mysql-client-core-5.5 (5.5.35-0ubuntu0.12.04.2) ...
+    Setting up mysql-client-5.5 (5.5.35-0ubuntu0.12.04.2) ...
+    Setting up mysql-client (5.5.35-0ubuntu0.12.04.2) ...
+    Setting up authbind (1.2.0build3) ...
+    Setting up openjdk-6-jre-lib (6b30-1.13.1-1ubuntu2~0.12.04.1) ...
+    Setting up openjdk-6-jre-headless (6b30-1.13.1-1ubuntu2~0.12.04.1) ...
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java to provide /usr/bin/java (java) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode.
+    update-alternatives: using /usr/lib/jvm/java-6-openjdk-i386/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode.
+    Setting up default-jre-headless (1:1.6-43ubuntu2) ...
+    Setting up libcommons-dbcp-java (1.4-1ubuntu1) ...
+    Setting up libtomcat7-java (7.0.26-1ubuntu1.2) ...
+    Setting up tomcat7-common (7.0.26-1ubuntu1.2) ...
+    Setting up tomcat7 (7.0.26-1ubuntu1.2) ...
+    
+    Creating config file /etc/default/tomcat7 with new version
+    Adding system user `tomcat7' (UID 106) ...
+    Adding new user `tomcat7' (UID 106) with group `tomcat7' ...
+    Not creating home directory `/usr/share/tomcat7'.
+     * Starting Tomcat servlet engine tomcat7                                                                                                                 [ OK ] 
+    Setting up icedtea-6-jre-cacao (6b30-1.13.1-1ubuntu2~0.12.04.1) ...
+    Setting up icedtea-6-jre-jamvm (6b30-1.13.1-1ubuntu2~0.12.04.1) ...
+    Setting up ca-certificates-java (20110912ubuntu6) ...
+    Adding debian:Digital_Signature_Trust_Co._Global_CA_1.pem
+    Adding debian:QuoVadis_Root_CA_3.pem
+    Adding debian:spi-cacert-2008.pem
+    Adding debian:Equifax_Secure_eBusiness_CA_2.pem
+    Adding debian:NetLock_Qualified_=Class_QA=_Root.pem
+    Adding debian:Equifax_Secure_eBusiness_CA_1.pem
+    Adding debian:TDC_OCES_Root_CA.pem
+    Adding debian:Taiwan_GRCA.pem
+    Adding debian:IGC_A.pem
+    Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority.pem
+    Adding debian:Digital_Signature_Trust_Co._Global_CA_3.pem
+    Adding debian:SwissSign_Gold_CA_-_G2.pem
+    Adding debian:Cybertrust_Global_Root.pem
+    Adding debian:COMODO_ECC_Certification_Authority.pem
+    Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
+    Adding debian:GeoTrust_Global_CA.pem
+    Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+    Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority.pem
+    Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.pem
+    Adding debian:Buypass_Class_3_CA_1.pem
+    Adding debian:Certplus_Class_2_Primary_CA.pem
+    Adding debian:ValiCert_Class_1_VA.pem
+    Adding debian:Root_CA_Generalitat_Valenciana.pem
+    Adding debian:TC_TrustCenter_Class_3_CA_II.pem
+    Adding debian:WellsSecure_Public_Root_Certificate_Authority.pem
+    Adding debian:Entrust_Root_Certification_Authority.pem
+    Adding debian:Sonera_Class_1_Root_CA.pem
+    Adding debian:Go_Daddy_Class_2_CA.pem
+    Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G2.pem
+    Adding debian:GlobalSign_Root_CA_-_R2.pem
+    Adding debian:Hongkong_Post_Root_CA_1.pem
+    Adding debian:GeoTrust_Universal_CA_2.pem
+    Adding debian:NetLock_Business_=Class_B=_Root.pem
+    Adding debian:certSIGN_ROOT_CA.pem
+    Adding debian:ACEDICOM_Root.pem
+    Adding debian:SwissSign_Platinum_CA_-_G2.pem
+    Adding debian:ApplicationCA_-_Japanese_Government.pem
+    Adding debian:Deutsche_Telekom_Root_CA_2.pem
+    Adding debian:Verisign_Class_4_Public_Primary_Certification_Authority_-_G3.pem
+    Adding debian:SwissSign_Silver_CA_-_G2.pem
+    Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+    Adding debian:A-Trust-nQual-03.pem
+    Adding debian:TC_TrustCenter__Germany__Class_3_CA.pem
+    Adding debian:ValiCert_Class_2_VA.pem
+    Adding debian:Baltimore_CyberTrust_Root.pem
+    Adding debian:thawte_Primary_Root_CA.pem
+    Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+    Adding debian:GlobalSign_Root_CA_-_R3.pem
+    Adding debian:Security_Communication_Root_CA.pem
+    Adding debian:Visa_eCommerce_Root.pem
+    Adding debian:RSA_Root_Certificate_1.pem
+    Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+    Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.pem
+    Adding debian:TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.pem
+    Adding debian:Swisscom_Root_CA_1.pem
+    Adding debian:RSA_Security_2048_v3.pem
+    Adding debian:DigiCert_Assured_ID_Root_CA.pem
+    Adding debian:Camerfirma_Chambers_of_Commerce_Root.pem
+    Adding debian:SecureSign_RootCA11.pem
+    Adding debian:QuoVadis_Root_CA.pem
+    Adding debian:Security_Communication_EV_RootCA1.pem
+    Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+    Adding debian:Entrust.net_Secure_Server_CA.pem
+    Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+    Adding debian:ca.pem
+    Adding debian:Certum_Trusted_Network_CA.pem
+    Adding debian:AddTrust_Low-Value_Services_Root.pem
+    Adding debian:Verisign_Class_4_Public_Primary_Certification_Authority_-_G2.pem
+    Adding debian:UTN_USERFirst_Email_Root_CA.pem
+    Adding debian:Thawte_Server_CA.pem
+    Adding debian:Network_Solutions_Certificate_Authority.pem
+    Adding debian:Sonera_Class_2_Root_CA.pem
+    Adding debian:SecureTrust_CA.pem
+    Adding debian:E-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi.pem
+    Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+    Adding debian:TURKTRUST_Certificate_Services_Provider_Root_2.pem
+    Adding debian:TC_TrustCenter_Universal_CA_I.pem
+    Adding debian:S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.pem
+    Adding debian:Comodo_AAA_Services_root.pem
+    Adding debian:Secure_Global_CA.pem
+    Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+    Adding debian:TC_TrustCenter_Universal_CA_III.pem
+    Adding debian:Microsec_e-Szigno_Root_CA.pem
+    Adding debian:Certigna.pem
+    Adding debian:DigiCert_Global_Root_CA.pem
+    Adding debian:Buypass_Class_2_CA_1.pem
+    Adding debian:AffirmTrust_Premium_ECC.pem
+    Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G2.pem
+    Adding debian:XRamp_Global_CA_Root.pem
+    Adding debian:UTN_USERFirst_Hardware_Root_CA.pem
+    Adding debian:DST_Root_CA_X3.pem
+    Adding debian:GeoTrust_Universal_CA.pem
+    Adding debian:Juur-SK.pem
+    Adding debian:DST_ACES_CA_X6.pem
+    Adding debian:TC_TrustCenter__Germany__Class_2_CA.pem
+    Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+    Adding debian:ComSign_Secured_CA.pem
+    Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+    Adding debian:AddTrust_Qualified_Certificates_Root.pem
+    Adding debian:AffirmTrust_Commercial.pem
+    Adding debian:spi-ca-2003.pem
+    Adding debian:StartCom_Certification_Authority.pem
+    Adding debian:ComSign_CA.pem
+    Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+    Adding debian:GeoTrust_Primary_Certification_Authority.pem
+    Adding debian:UTN_DATACorp_SGC_Root_CA.pem
+    Adding debian:AffirmTrust_Networking.pem
+    Adding debian:Izenpe.com.pem
+    Adding debian:AddTrust_Public_Services_Root.pem
+    Adding debian:America_Online_Root_Certification_Authority_2.pem
+    Adding debian:AC_Raíz_Certicámara_S.A..pem
+    Adding debian:Equifax_Secure_Global_eBusiness_CA.pem
+    Adding debian:TDC_Internet_Root_CA.pem
+    Adding debian:GlobalSign_Root_CA.pem
+    Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority.pem
+    Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+    Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+    Adding debian:TURKTRUST_Certificate_Services_Provider_Root_1.pem
+    Adding debian:thawte_Primary_Root_CA_-_G3.pem
+    Adding debian:Comodo_Secure_Services_root.pem
+    Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+    Adding debian:Starfield_Class_2_CA.pem
+    Adding debian:GTE_CyberTrust_Global_Root.pem
+    Adding debian:CA_Disig.pem
+    Adding debian:AddTrust_External_Root.pem
+    Adding debian:cacert.org.pem
+    Adding debian:Wells_Fargo_Root_CA.pem
+    Adding debian:COMODO_Certification_Authority.pem
+    Adding debian:Firmaprofesional_Root_CA.pem
+    Adding debian:Global_Chambersign_Root_-_2008.pem
+    Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+    Adding debian:TWCA_Root_Certification_Authority.pem
+    Adding debian:Comodo_Trusted_Services_root.pem
+    Adding debian:AffirmTrust_Premium.pem
+    Adding debian:Certum_Root_CA.pem
+    Adding debian:EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.pem
+    Adding debian:Equifax_Secure_CA.pem
+    Adding debian:TC_TrustCenter_Class_2_CA_II.pem
+    Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+    Adding debian:GeoTrust_Global_CA_2.pem
+    Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+    Adding debian:Camerfirma_Global_Chambersign_Root.pem
+    Adding debian:thawte_Primary_Root_CA_-_G2.pem
+    Adding debian:NetLock_Notary_=Class_A=_Root.pem
+    Adding debian:ePKI_Root_Certification_Authority.pem
+    Adding debian:America_Online_Root_Certification_Authority_1.pem
+    Adding debian:NetLock_Express_=Class_C=_Root.pem
+    Adding debian:Certinomis_-_Autorité_Racine.pem
+    Adding debian:Thawte_Premium_Server_CA.pem
+    Adding debian:Staat_der_Nederlanden_Root_CA.pem
+    Adding debian:CNNIC_ROOT.pem
+    Adding debian:QuoVadis_Root_CA_2.pem
+    done.
+    Processing triggers for libc-bin ...
+    ldconfig deferred processing now taking place
+
+vagrant@precise32:~$ cd /var/lib/tomcat7/conf
+
+vagrant@precise32:/var/lib/tomcat7/conf$ sudo keytool -genkey -alias tomcat -keyalg RSA -keystore .keystore
+
+    Enter keystore password: P@ssw0rd
+    Re-enter new password: P@ssw0rd 
+    What is your first and last name?
+      [Unknown]:  Loja Virtual
+    What is the name of your organizational unit?
+      [Unknown]:  Loja Virtual DevOps
+    What is the name of your organization?
+      [Unknown]:  DevOps
+    What is the name of your City or Locality?
+      [Unknown]:  Sao Paulo
+    What is the name of your State or Province?
+      [Unknown]:  SP
+    What is the two-letter country code for this unit?
+      [Unknown]:  BR
+    Is CN=Loja Virtual, OU=Loja Virtual DevOps, O=DevOps, L=Sao Paulo, ST=SP, C=BR correct?
+      [no]:  yes
+    
+    Enter key password for <tomcat>
+    	(RETURN if same as keystore password):  
+    Re-enter new password: P@ssw0rd 
+    
+vagrant@precise32:~$ sudo vim /var/lib/tomcat7/conf/server.xml
+
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+                   maxThreads="150" scheme="https" secure="true"
+                   keystoreFile="conf/.keystore" keystorePass="secret"
+                   clientAuth="false" sslProtocol="SSLv3" />
+
+
+vagrant@precise32:~$ sudo vim /etc/default/tomcat7
+
+    JAVA_OPTS="-Djava.awt.headless=true -Xmx512M -XX:+UseConcMarkSweepGC"
+
+vagrant@precise32:~$ sudo service tomcat7 restart
+
+vagrant@precise32:~$ sudo vim /var/lib/tomcat7/conf/context.xml
+
+    <Resource name="jdbc/web" auth="Container" 
+    type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+    maxWait="10000" username="loja" password="P@ssw0rd"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>
+    
+    <Resource name="jdbc/secure" auth="Container"
+    type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+    maxWait="10000" username="loja" password="P@ssw0rd"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>
+    
+    <Resource name="jdbc/storage" auth="Container"
+    type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+    maxWait="10000" username="loja" password="P@ssw0rd"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>
+    
+
+vagrant@precise32:~$ cd /vagrant/loja-virtual-devops
+
+vagrant@precise32:~$ mvn -DskipTests package
+
+vagrant@web$ sudo cp combined/target/devopsnapratica.war /var/lib/tomcat7/webapps
+
+vagrant@precise32:~$ tail -f /var/lib/tomcat7/logs/catalina.out
+
+Acessar http://192.168.33.10:8080/devopsnapratica/
+
+Acessar http://192.168.33.12:8080/devopsnapratica/admin/ 
+
+    user/password admin/admin
+
+*NOTA* barra no final é importante. 
+
