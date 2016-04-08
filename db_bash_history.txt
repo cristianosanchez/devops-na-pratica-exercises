@@ -1,138 +1,54 @@
-cbsanchez:livro cristianosanchez$ vagrant ssh db
-Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+# MySQL
 
- * Documentation:  https://help.ubuntu.com/
-Welcome to your Vagrant-built virtual machine.
-Last login: Fri Sep 14 06:22:31 2012 from 10.0.2.2
+Instalar
 
+    $ sudo apt-get update
+    $ sudo apt-get install mysql-server
 
-vagrant@precise32:~$ sudo apt-get update
+Criar o arquivo permitindo acesso externo
 
+    $ sudo vi /etc/mysql/conf.d/allow_external.cnf
 
-vagrant@precise32:~$ sudo apt-get install mysql-server
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-The following extra packages will be installed:
-  libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18 libnet-daemon-perl libplrpc-perl libterm-readkey-perl mysql-client-5.5
-  mysql-client-core-5.5 mysql-common mysql-server-5.5 mysql-server-core-5.5
-Suggested packages:
-  libipc-sharedcache-perl tinyca mailx
-The following NEW packages will be installed:
-  libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18 libnet-daemon-perl libplrpc-perl libterm-readkey-perl mysql-client-5.5
-  mysql-client-core-5.5 mysql-common mysql-server mysql-server-5.5 mysql-server-core-5.5
-0 upgraded, 13 newly installed, 0 to remove and 159 not upgraded.
-Need to get 26.6 MB of archives.
-After this operation, 92.2 MB of additional disk space will be used.
-Do you want to continue [Y/n]? Y
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-common all 5.5.35-0ubuntu0.12.04.2 [13.0 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libmysqlclient18 i386 5.5.35-0ubuntu0.12.04.2 [924 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main libnet-daemon-perl all 0.48-1 [43.1 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/main libplrpc-perl all 0.2020-2 [36.0 kB]
-Get:5 http://us.archive.ubuntu.com/ubuntu/ precise/main libdbi-perl i386 1.616-1build2 [849 kB]
-Get:6 http://us.archive.ubuntu.com/ubuntu/ precise/main libdbd-mysql-perl i386 4.020-1build2 [104 kB]
-Get:7 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-client-core-5.5 i386 5.5.35-0ubuntu0.12.04.2 [1,869 kB]
-Get:8 http://us.archive.ubuntu.com/ubuntu/ precise/main libterm-readkey-perl i386 2.30-4build3 [28.4 kB]
-Get:9 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-client-5.5 i386 5.5.35-0ubuntu0.12.04.2 [8,090 kB]
-Get:10 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-server-core-5.5 i386 5.5.35-0ubuntu0.12.04.2 [5,842 kB]                                  
-Get:11 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-server-5.5 i386 5.5.35-0ubuntu0.12.04.2 [8,724 kB]                                       
-Get:12 http://us.archive.ubuntu.com/ubuntu/ precise/main libhtml-template-perl all 2.10-1 [65.0 kB]                                                             
-Get:13 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main mysql-server all 5.5.35-0ubuntu0.12.04.2 [11.2 kB]                                             
-Fetched 26.6 MB in 25s (1,032 kB/s)                                                                                                                             
-Preconfiguring packages ...
-Selecting previously unselected package mysql-common.
-(Reading database ... 29361 files and directories currently installed.)
-Unpacking mysql-common (from .../mysql-common_5.5.35-0ubuntu0.12.04.2_all.deb) ...
-Selecting previously unselected package libmysqlclient18.
-Unpacking libmysqlclient18 (from .../libmysqlclient18_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
-Selecting previously unselected package libnet-daemon-perl.
-Unpacking libnet-daemon-perl (from .../libnet-daemon-perl_0.48-1_all.deb) ...
-Selecting previously unselected package libplrpc-perl.
-Unpacking libplrpc-perl (from .../libplrpc-perl_0.2020-2_all.deb) ...
-Selecting previously unselected package libdbi-perl.
-Unpacking libdbi-perl (from .../libdbi-perl_1.616-1build2_i386.deb) ...
-Selecting previously unselected package libdbd-mysql-perl.
-Unpacking libdbd-mysql-perl (from .../libdbd-mysql-perl_4.020-1build2_i386.deb) ...
-Selecting previously unselected package mysql-client-core-5.5.
-Unpacking mysql-client-core-5.5 (from .../mysql-client-core-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
-Selecting previously unselected package libterm-readkey-perl.
-Unpacking libterm-readkey-perl (from .../libterm-readkey-perl_2.30-4build3_i386.deb) ...
-Selecting previously unselected package mysql-client-5.5.
-Unpacking mysql-client-5.5 (from .../mysql-client-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
-Selecting previously unselected package mysql-server-core-5.5.
-Unpacking mysql-server-core-5.5 (from .../mysql-server-core-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
-Processing triggers for man-db ...
-Setting up mysql-common (5.5.35-0ubuntu0.12.04.2) ...
-Selecting previously unselected package mysql-server-5.5.
-(Reading database ... 29739 files and directories currently installed.)
-Unpacking mysql-server-5.5 (from .../mysql-server-5.5_5.5.35-0ubuntu0.12.04.2_i386.deb) ...
-Selecting previously unselected package libhtml-template-perl.
-Unpacking libhtml-template-perl (from .../libhtml-template-perl_2.10-1_all.deb) ...
-Selecting previously unselected package mysql-server.
-Unpacking mysql-server (from .../mysql-server_5.5.35-0ubuntu0.12.04.2_all.deb) ...
-Processing triggers for ureadahead ...
-ureadahead will be reprofiled on next reboot
-Processing triggers for man-db ...
-Setting up libmysqlclient18 (5.5.35-0ubuntu0.12.04.2) ...
-Setting up libnet-daemon-perl (0.48-1) ...
-Setting up libplrpc-perl (0.2020-2) ...
-Setting up libdbi-perl (1.616-1build2) ...
-Setting up libdbd-mysql-perl (4.020-1build2) ...
-Setting up mysql-client-core-5.5 (5.5.35-0ubuntu0.12.04.2) ...
-Setting up libterm-readkey-perl (2.30-4build3) ...
-Setting up mysql-client-5.5 (5.5.35-0ubuntu0.12.04.2) ...
-Setting up mysql-server-core-5.5 (5.5.35-0ubuntu0.12.04.2) ...
-Setting up mysql-server-5.5 (5.5.35-0ubuntu0.12.04.2) ...
-140402 14:07:06 [Warning] Using unique option prefix key_buffer instead of key_buffer_size is deprecated and will be removed in a future release. Please use the full name instead.
-mysql start/running, process 6287
-Setting up libhtml-template-perl (2.10-1) ...
-Setting up mysql-server (5.5.35-0ubuntu0.12.04.2) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
+    [mysqld]
+        bind-address=0.0.0.0
 
+Re-iniciar o DB
 
-vagrant@precise32:~$ sudo vi /etc/mysql/conf.d/allow_external.cnf
-# adicionar as seguintes linhas:
-# [mysqld]
-# bind-address=0.0.0.0
+    $ sudo service mysql restart
 
+Criar o schema loja_schema
 
-vagrant@precise32:~$ sudo service mysql restart
-mysql stop/waiting
-mysql start/running, process 6545
-vagrant@precise32:~$ 
+    $ mysqladmin -u root -p create loja_schema
+    Enter password: P@ssw0rd
 
+    mysql -u root -p -e "SHOW DATABASES"
 
-vagrant@precise32:~$ mysqladmin -u root -p create loja_schema
-Enter password: P@ssw0rd
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | loja_schema        |
+    | mysql              |
+    | performance_schema |
+    | test               |
+    +--------------------+
 
+Para remover a conta default do MySQL
 
-mysql -u root -p -e "SHOW DATABASES"
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| loja_schema        |
-| mysql              |
-| performance_schema |
-| test               |
-+--------------------+
+    $ mysql -u root -p -e "DELETE FROM mysql.user WHERE user=''; FLUSH PRIVILEGES"
+    Enter password: P@ssw0rd
 
+Criando um user para operar o DB. user/password= loja/P@ssw0rd
 
-# para remover a conta default do MySQL
-vagrant@precise32:~$ mysql -u root -p -e "DELETE FROM mysql.user WHERE user=''; FLUSH PRIVILEGES"
-Enter password: P@ssw0rd
+    $ mysql -u root -p -e "grant all privileges on loja_schema.* to 'loja'@'%' identified by 'lojasecret';"
 
+Testando usuario criado
 
-# criando um user para operar o DB. user/password= loja/P@ssw0rd
-vagrant@precise32:~$ mysql -u root -p -e "grant all privileges on loja_schema.* to 'loja'@'%' identified by 'lojasecret';"
-
-
-# testando usuario criado
-vagrant@precise32:~$ mysql -u loja -p loja_schema -e "select database(), user()"
-+-------------+----------------+
-| database()  | user()         |
-+-------------+----------------+
-| loja_schema | loja@localhost |
-+-------------+----------------+
+    $ mysql -u loja -p loja_schema -e "select database(), user()"
+    
+    +-------------+----------------+
+    | database()  | user()         |
+    +-------------+----------------+
+    | loja_schema | loja@localhost |
+    +-------------+----------------+
 

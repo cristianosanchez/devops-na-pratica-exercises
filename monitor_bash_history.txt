@@ -1,119 +1,117 @@
-cbsanchez:livro cristianosanchez$ vagrant ssh monitor
-Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+# Nagios
 
- * Documentation:  https://help.ubuntu.com/
-Welcome to your Vagrant-built virtual machine.
-Last login: Fri Sep 14 06:22:31 2012 from 10.0.2.2
+Configurar o repositório do Nagios para o apt:
 
-vagrant@monitor$ sudo vi /etc/apt/preferences.d/nagios
+    $ sudo vi /etc/apt/preferences.d/nagios
+
 Package: nagios*
 Pin: release n=raring
 Pin-Priority: 990
 
+    $ sudo vi /etc/apt/sources.list.d/raring.list
+    
+    deb http://archive.ubuntu.com/ubuntu raring main
 
-vagrant@monitor$ sudo vi /etc/apt/sources.list.d/raring.list
-deb http://archive.ubuntu.com/ubuntu raring main
+Instalar o Nagios
 
+    $ sudo apt-get install nagios3
 
-vagrant@monitor$ sudo apt-get install nagios3
+    monitor.lojavirtualdevops.com.br
+    admin: nagiosadmin
+    password: secret
 
-# vai pedir o dominio para 'Internet Site'
-monitor.lojavirtualdevops.com.br
-admin: nagiosadmin
-password: secret
+Testar com a URL abaixo.
 
+    http://nagiosadmin:secret@192.168.33.14/nagios3
 
-# testar com a URL abaixo.
-http://nagiosadmin:secret@192.168.33.14/nagios3
+Configurar:
 
+    $ sudo vim /etc/nagios3/conf.d/loja_virtual.cfg
 
-vagrant@monitor$ sudo vim /etc/nagios3/conf.d/loja_virtual.cfg
+    define hostgroup {
+      hostgroup_name  db-servers
+      alias           Database Servers
+    }
+    
+    define hostgroup {
+      hostgroup_name  web-servers
+      alias           Web Servers
+    }
+    
+    define host {
+      use         generic-host
+      host_name   192.168.33.10
+      hostgroups  ssh-servers, debian-servers, web-servers
+    }
+    
+    define host {
+      use         generic-host
+      host_name   192.168.33.12
+      hostgroups  ssh-servers, debian-servers, db-servers
+    }
+    
+    define service {
+      service_description  MySQL
+      use                  generic-service
+      hostgroup_name       db-servers
+      check_command        check_tcp!3306
+    }
+    
+    define service {
+      service_description  MySQL-lojavirtual
+      use                  generic-service
+      hostgroup_name       db-servers
+      check_command        check_mysql_database!loja!lojasecret!loja_schema
+    }
+    
+    define command {
+      command_name  check_tomcat_http
+      command_line  /usr/lib/nagios/plugins/check_http -H '$HOSTADDRESS$' -p '$ARG1$' -u '$ARG2$' -e 'HTTP/1.1 200 OK'
+    }
+    
+    define service {
+      service_description  Tomcat
+      use                  generic-service
+      hostgroup_name       web-servers
+      check_command        check_tomcat_http!8080!'/devopsnapratica/'
+    }
+    
+    define command {
+      command_name  check_tomcat_https
+      command_line  /usr/lib/nagios/plugins/check_http -H '$HOSTADDRESS$' --ssl=3 -p '$ARG1$' -u '$ARG2$' -e 'HTTP/1.1 200 OK'
+    }
+    
+    define service {
+      service_description  Tomcat SSL
+      use                  generic-service
+      hostgroup_name       web-servers
+      check_command        check_tomcat_https!8443!'/devopsnapratica/admin/'
+    }
 
-define hostgroup {
-  hostgroup_name  db-servers
-  alias           Database Servers
-}
+Re-iniciar
 
-define hostgroup {
-  hostgroup_name  web-servers
-  alias           Web Servers
-}
+    $ sudo service nagios3 reload
 
-define host {
-  use         generic-host
-  host_name   192.168.33.10
-  hostgroups  ssh-servers, debian-servers, web-servers
-}
+Configurando alertas:
 
-define host {
-  use         generic-host
-  host_name   192.168.33.12
-  hostgroups  ssh-servers, debian-servers, db-servers
-}
+    cat /etc/nagios3/commands.cfg
+    cat /etc/nagios3/conf.d/timeperiods_nagios2.cfg
+    cat /etc/nagios3/conf.d/contacts_nagios2.cfg
 
-define service {
-  service_description  MySQL
-  use                  generic-service
-  hostgroup_name       db-servers
-  check_command        check_tcp!3306
-}
+    define contact {
+            contact_name                    root
+            alias                           Root
+            service_notification_period     24x7
+            host_notification_period        24x7
+            service_notification_options    w,u,c,r
+            host_notification_options       d,r
+            service_notification_commands   notify-service-by-email
+            host_notification_commands      notify-host-by-email
+            email                           naousoemail@gmail.com
+            }
 
-define service {
-  service_description  MySQL-lojavirtual
-  use                  generic-service
-  hostgroup_name       db-servers
-  check_command        check_mysql_database!loja!lojasecret!loja_schema
-}
+Testar desligando o serviço SSH
 
-define command {
-  command_name  check_tomcat_http
-  command_line  /usr/lib/nagios/plugins/check_http -H '$HOSTADDRESS$' -p '$ARG1$' -u '$ARG2$' -e 'HTTP/1.1 200 OK'
-}
+    sudo service ssh stop
+    sudo service ssh start
 
-define service {
-  service_description  Tomcat
-  use                  generic-service
-  hostgroup_name       web-servers
-  check_command        check_tomcat_http!8080!'/devopsnapratica/'
-}
-
-define command {
-  command_name  check_tomcat_https
-  command_line  /usr/lib/nagios/plugins/check_http -H '$HOSTADDRESS$' --ssl=3 -p '$ARG1$' -u '$ARG2$' -e 'HTTP/1.1 200 OK'
-}
-
-define service {
-  service_description  Tomcat SSL
-  use                  generic-service
-  hostgroup_name       web-servers
-  check_command        check_tomcat_https!8443!'/devopsnapratica/admin/'
-}
-
-
-vagrant@monitor$ sudo service nagios3 reload
-
-
-# CONFIGURANDO ALERTAS
-
-cat /etc/nagios3/commands.cfg
-cat /etc/nagios3/conf.d/timeperiods_nagios2.cfg
-cat /etc/nagios3/conf.d/contacts_nagios2.cfg
-
-
-define contact{
-        contact_name                    root
-        alias                           Root
-        service_notification_period     24x7
-        host_notification_period        24x7
-        service_notification_options    w,u,c,r
-        host_notification_options       d,r
-        service_notification_commands   notify-service-by-email
-        host_notification_commands      notify-host-by-email
-        email                           naousoemail@gmail.com
-        }
-		
-		
-# Testar desligando o serviço SSH
-
-sudo service ssh stop
-sudo service ssh start
